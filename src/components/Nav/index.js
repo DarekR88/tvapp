@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App() {
+function Nav() {
   return (
-    <div className="App">
+    <div className="Nav">
       
     </div>
   );
 }
 
-export default App;
+export default Nav;
