@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function SearchForm(props) {
+
+  const {searchTerm, setSearchTerm} = useState('')
+
   return (
     <form>
       <div className="form-group">
