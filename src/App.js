@@ -1,11 +1,16 @@
 import React from 'react';
-// import { Provider } from 'react-redux'
+import createStore from './Store';
+import { Provider } from 'react-redux';
 import SearchBar from './components/SearchBar';
+
+const store = createStore();
 
 function App() {
   return (
     <div className="App">
-      <SearchBar />
+      <Provider store={store}>
+        <SearchBar />
+      </Provider>
     </div>
   );
 }
