@@ -4,8 +4,8 @@ import { actions } from '../../Features/SearchTerm/reducer'
  
 function SearchBar() {
   const dispatch = useDispatch();
-  const [searchTerm, setSearchTerm] = useState("Search for a TV Show");
-  // const [searchFocus, setSearchFocus] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -13,36 +13,22 @@ function SearchBar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(searchTerm);
     dispatch(
       actions.active({
         searchTerm
       })
     );
-    // setSearchFocus(false)
   };
-
-  // const inputFocus = () => {
-  //   setSearchTerm("");
-  //   setSearchFocus(true);
-  // };
-
-  // let dynamicLabel;
-
-  // if (searchFocus) {
-  //   dynamicLabel = <p>Search for a TV Show</p>;
-  // }
 
   return (
     <div className="SearchBar">
       <form className="searchForm" onSubmit={handleSubmit}>
-        {/* {dynamicLabel} */}
         <input
-          // onFocus={inputFocus}
           onChange={handleChange}
           type="text"
           id="search-field"
           name="search-field"
+          placeholder="Search for a TV show or Actor"
           value={searchTerm}
         ></input>
         <input type="submit" value="Search"></input>
