@@ -6,11 +6,14 @@ function ResultsContainer() {
 
     const [showSearchResults, setShowSearchResults] = useState("");
     const searchTerm = useSelector(state => state.searchTerm.searchTerm.searchTerm);
-    console.log(searchTerm)
+    // console.log(searchTerm)
 
     useEffect(() => {
+        API.search('shows?q=' + searchTerm)
+        .then(res => setShowSearchResults(res.data), console.log(showSearchResults))
+        .catch(err => console.log(err));
+    }, [searchTerm, showSearchResults])
 
-    }, [searchTerm])
     return (
       <div className="ResultsContainer">
 

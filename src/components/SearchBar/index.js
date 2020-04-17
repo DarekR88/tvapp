@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { actions } from '../../Features/SearchTerm/reducer'
+import API from '../../utils/API';
  
 function SearchBar() {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState();
 
 
   const handleChange = (event) => {
@@ -13,12 +15,23 @@ function SearchBar() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(
-      actions.active({
-        searchTerm
-      })
-    );
+
+    // dispatch(
+    //   actions.active({
+    //     searchTerm
+    //   })
+    // );
+    
+    API.search('shows?q=' + searchTerm)
+    .then(res => setSearchResults(res.data))
+    .catch(err => console.log(err));
   };
+
+  useEffect(() => {
+    if (searchResults) {
+      console.log(searchResults)
+    }
+  }, [searchResults])
 
   return (
     <div className="SearchBar">
@@ -30,8 +43,8 @@ function SearchBar() {
           name="search-field"
           placeholder="Search for a TV show or Actor"
           value={searchTerm}
-        ></input>
-        <input type="submit" value="Search"></input>
+        />
+        <input type="submit" value="Search" />
       </form>
     </div>
   );
