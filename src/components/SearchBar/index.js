@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { actions } from '../../Features/SearchTerm/reducer'
+// import { actions } from '../../Features/SearchTerm/reducer'
+import { actions } from '../../Features/SearchResults/reducer';
 import API from '../../utils/API';
  
 function SearchBar() {
@@ -30,6 +31,11 @@ function SearchBar() {
   useEffect(() => {
     if (searchResults) {
       console.log(searchResults)
+      dispatch(
+        actions.results({
+          searchResults
+        })
+      )
     }
   }, [searchResults])
 
