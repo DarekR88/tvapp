@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-// import { actions } from '../../Features/SearchTerm/reducer'
-import { actions } from '../../Features/SearchResults/reducer';
-import API from '../../utils/API';
- 
+import { actions as peopleActions } from '../../Features/PeopleResults/reducer';
+import { actions as showActions } from "../../Features/SearchResults/reducer";
+import API from "../../utils/API";
+
 function SearchBar() {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResults, setSearchResults] = useState();
-
+  const [showSearchResults, setShowSearchResults] = useState();
+  const [peopleSearchResults, setPeopleSearchResults] = useState();
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -22,22 +22,33 @@ function SearchBar() {
     //     searchTerm
     //   })
     // );
-    
-    API.search('shows?q=' + searchTerm)
-    .then(res => setSearchResults(res.data))
-    .catch(err => console.log(err));
+    API.search("people?q=" + searchTerm)
+      .then((res) => setPeopleSearchResults(res.data))
+      .catch((err) => console.log(err));
+
+    API.search("shows?q=" + searchTerm)
+      .then((res) => setShowSearchResults(res.data))
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
-    if (searchResults) {
-      // console.log(searchResults)
+    if (showSearchResults) {
+      // console.log(showSearchResults)
       dispatch(
-        actions.results({
-          searchResults
+        showActions.results({
+          showSearchResults,
         })
-      )
+      );
     }
-  }, [searchResults])
+
+    if(peopleSearchResults){
+      dispatch(
+        peopleActions.peopleResults({
+          peopleSearchResults,
+        })
+      );
+    }
+  }, [showSearchResults, peopleSearchResults]);
 
   return (
     <div className="SearchBar">

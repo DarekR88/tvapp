@@ -4,7 +4,7 @@ import Card from '../Card';
 
 function ResultsContainer() {
 
-    const searchResults = useSelector(state => state.searchResults.searchResults.searchResults);
+    const searchResults = useSelector(state => state.searchResults.searchResults.showSearchResults);
   
     const resultsFunc = (searchResults) => {
       if (searchResults){
