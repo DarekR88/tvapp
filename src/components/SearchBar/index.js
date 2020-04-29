@@ -30,7 +30,7 @@ function SearchBar() {
 
   useEffect(() => {
     if (searchResults) {
-      console.log(searchResults)
+      // console.log(searchResults)
       dispatch(
         actions.results({
           searchResults
