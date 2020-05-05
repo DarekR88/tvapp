@@ -1,0 +1,27 @@
+.Logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image-container{
+        height:auto;
+        margin: auto;
+        text-align:center;
+        position:relative;
+
+        .tv-picture{
+            height: 60px;
+        }
+    
+        .title{
+            position: absolute;
+            margin: auto;
+            top: 30%;
+            left:0;
+            right:0;
+            bottom:0;
+        }
+
+    }
+
+}

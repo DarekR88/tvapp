@@ -3,6 +3,8 @@ import { useSelector } from "react-redux";
 import Card from "../Card";
 
 function ResultsContainer() {
+  const [activeShows, setActiveShows] = useState(false)
+  const [activeActors, setActiveActors] = useState(false)
   const showSearchResults = useSelector(
     (state) => state.searchResults.searchResults.showSearchResults
   );
@@ -12,8 +14,8 @@ function ResultsContainer() {
 
   const showResultsFunc = (searchResults) => {
     if (searchResults) {
+      // setActiveShows(true)
       const newArr = searchResults.map((i) => {
-        // console.log(i.show.name)
         return (
           <div className="showContainer">
             <Card
@@ -31,6 +33,7 @@ function ResultsContainer() {
 
   const peopleResultsFunc = (searchResults) => {
     if (searchResults) {
+      // setActiveActors(true)
       const peopleArr = searchResults.map((i) => {
         if (
           i.person.country &&
@@ -40,13 +43,15 @@ function ResultsContainer() {
         ) {
           if (i.person.country.name) {
             return (
-              <Card
-                name={i.person.name}
-                type={i.person.country.name}
-                genres={i.person.birthday}
-                dDay={i.person.deathday}
-                url={i.person.url}
-              />
+              <div className="peopleContainer">
+                <Card
+                  name={i.person.name}
+                  type={i.person.country.name}
+                  genres={i.person.birthday}
+                  dDay={i.person.deathday}
+                  url={i.person.url}
+                />
+              </div>
             );
           }
         } else {
@@ -65,7 +70,9 @@ function ResultsContainer() {
 
   return (
     <div className="ResultsContainer">
+      {/* <p className={activeShows? 'active': 'not-active'}>TV Shows</p> */}
       {showResultsFunc(showSearchResults)}
+      {/* <p className={activeActors? 'active': 'not-active'}>Actors</p> */}
       {peopleResultsFunc(peopleSearchResults)}
     </div>
   );
