@@ -8,6 +8,7 @@ function Card(props) {
       <p>{props.genres}</p>
       <p>{props.dDay}</p>
       <p>{props.url}</p>
+      <img src={props.image} alt="show/actor image"></img>
     </div>
   );
 }

@@ -11,6 +11,9 @@ function ResultsContainer() {
   const peopleSearchResults = useSelector(
     (state) => state.peopleResults.peopleSearchResults.peopleSearchResults
   );
+  const formChange = useSelector(
+    (state) => state.formChange.formChange.formChange
+  );
 
   const showResultsFunc = (searchResults) => {
     if (searchResults) {
@@ -39,9 +42,10 @@ function ResultsContainer() {
           i.person.country &&
           i.person.birthday &&
           i.person.deathday &&
-          i.person.url
+          i.person.url &&
+          i.person.image
         ) {
-          if (i.person.country.name) {
+          if (i.person.country.name && i.person.image.medium) {
             return (
               <div className="peopleContainer">
                 <Card
@@ -50,6 +54,7 @@ function ResultsContainer() {
                   genres={i.person.birthday}
                   dDay={i.person.deathday}
                   url={i.person.url}
+                  image={i.person.image.medium}
                 />
               </div>
             );
@@ -68,11 +73,13 @@ function ResultsContainer() {
     }
   };
 
+
+
   return (
     <div className="ResultsContainer">
-      {/* <p className={activeShows? 'active': 'not-active'}>TV Shows</p> */}
+      <p className={formChange? 'active': 'not-active'}>TV Shows</p>
       {showResultsFunc(showSearchResults)}
-      {/* <p className={activeActors? 'active': 'not-active'}>Actors</p> */}
+      <p className={formChange? 'active': 'not-active'}>Actors</p>
       {peopleResultsFunc(peopleSearchResults)}
     </div>
   );

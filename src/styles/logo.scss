@@ -8,18 +8,25 @@
         margin: auto;
         text-align:center;
         position:relative;
+        display: flex;
+        flex-direction: row;
 
         .tv-picture{
             height: 60px;
         }
     
         .title{
+            // font-size: 20px;
             position: absolute;
             margin: auto;
             top: 30%;
             left:0;
-            right:0;
+            right:50%;
             bottom:0;
+        }
+
+        .title-two{
+            margin-top: 18px;
         }
 
     }

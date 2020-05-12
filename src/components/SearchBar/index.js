@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { actions as peopleActions } from '../../Features/PeopleResults/reducer';
 import { actions as showActions } from "../../Features/SearchResults/reducer";
 import API from "../../utils/API";
 import SearchIcon from '../../photos/searchIcon.png'
+import { actions as formActions } from '../../Features/FormChange/reducer'
 
 function SearchBar() {
   const dispatch = useDispatch();
   const [searchTerm, setSearchTerm] = useState("");
   const [showSearchResults, setShowSearchResults] = useState();
   const [peopleSearchResults, setPeopleSearchResults] = useState();
+  const formChange = useSelector(
+    (state) => state.formChange.formChange.formChange
+  );
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -18,11 +22,11 @@ function SearchBar() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // dispatch(
-    //   actions.active({
-    //     searchTerm
-    //   })
-    // );
+    dispatch(
+      formActions.change({
+        formChange: true
+      })
+    );
     API.search("people?q=" + searchTerm)
       .then((res) => setPeopleSearchResults(res.data))
       .catch((err) => console.log(err));
