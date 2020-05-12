@@ -61,11 +61,11 @@ function ResultsContainer() {
             return (
               <div className="peopleContainer">
                 <Card
-                  name={"Name: " + i.person.name}
-                  type={"Country: " + i.person.country.name}
-                  genres={"Birthday: " + i.person.birthday}
-                  dDay={"Deceased" + i.person.deathday}
-                  url={"More Info: " + i.person.url}
+                  name={i.person.name}
+                  type={i.person.country.name? 'Country: ' + i.person.country.name : null}
+                  genres={i.person.birthday? 'Birthday: ' + i.person.birthday: null}
+                  dDay={i.person.deathday? 'Deceased: ' + i.person.deathday : null}
+                  url={i.person.url}
                   image={i.person.image.medium}
                 />
               </div>
@@ -74,9 +74,9 @@ function ResultsContainer() {
         } else {
           return (
             <Card
-              name={"Name: " + i.person.name}
-              type={"Country: " + i.person.country.name}
-              url={"More Info: " + i.person.url}
+              name={i.person.name}
+              type={i.person.birthday? 'Birthday: ' + i.person.birthday: null}
+              url={i.person.url}
               image={NoImage}
             />
           );
