@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Card from "../Card";
+import NoImage from '../../photos/no-image.png'
 
 function ResultsContainer() {
-  const [activeShows, setActiveShows] = useState(false)
-  const [activeActors, setActiveActors] = useState(false)
+  const [activeShows, setActiveShows] = useState(false);
+  const [activeActors, setActiveActors] = useState(false);
   const showSearchResults = useSelector(
     (state) => state.searchResults.searchResults.showSearchResults
   );
@@ -19,16 +20,33 @@ function ResultsContainer() {
     if (searchResults) {
       // setActiveShows(true)
       const newArr = searchResults.map((i) => {
-        return (
-          <div className="showContainer">
+        if (i.show.image) {
+          if (i.show.image.medium) {
+            return (
+              <div className="showContainer">
+                <Card
+                  name={i.show.name}
+                  type={i.show.type}
+                  genres={i.show.genres.join(", ")}
+                  url={i.show.url}
+                  image={i.show.image.medium}
+                />
+              </div>
+            );
+          }
+        } else{
+          return(
+            <div className="showContainer">
             <Card
               name={i.show.name}
               type={i.show.type}
               genres={i.show.genres.join(", ")}
               url={i.show.url}
+              image={NoImage}
             />
           </div>
-        );
+          )
+        }
       });
       return newArr;
     }
@@ -41,15 +59,13 @@ function ResultsContainer() {
         if (
           i.person.country &&
           i.person.birthday &&
-          i.person.deathday &&
-          i.person.url &&
           i.person.image
         ) {
-          if (i.person.country.name && i.person.image.medium) {
+          if (i.person.country.name) {
             return (
               <div className="peopleContainer">
                 <Card
-                  name={i.person.name}
+                  name={`Name: ${i.person.name}`}
                   type={i.person.country.name}
                   genres={i.person.birthday}
                   dDay={i.person.deathday}
@@ -61,25 +77,24 @@ function ResultsContainer() {
           }
         } else {
           return (
-            <Card 
-            name={i.person.name}
-            type={i.person.birthday}
-            url={i.person.url}
+            <Card
+              name={i.person.name}
+              type={i.person.birthday}
+              url={i.person.url}
+              image={NoImage}
             />
-          )
+          );
         }
       });
       return peopleArr;
     }
   };
 
-
-
   return (
     <div className="ResultsContainer">
-      <p className={formChange? 'active': 'not-active'}>TV Shows</p>
+      <p className={formChange ? "active" : "not-active"}>TV Shows</p>
       {showResultsFunc(showSearchResults)}
-      <p className={formChange? 'active': 'not-active'}>Actors</p>
+      <p className={formChange ? "active" : "not-active"}>Actors</p>
       {peopleResultsFunc(peopleSearchResults)}
     </div>
   );
