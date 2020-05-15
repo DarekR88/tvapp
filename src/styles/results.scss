@@ -1,9 +1,21 @@
 .ResultsContainer {
-//   .active {
-    
-//   }
+  .active {
+    font-size: 33px;
+    text-align: center;
+    margin: 18px 0px;
+  }
 
   .not-active {
     display: none;
+  }
+
+  .showContainer{
+    border-bottom: 1px solid gray;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+
+    &:last-of-type {
+      border: none;
+    }
   }
 }

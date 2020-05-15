@@ -28,7 +28,7 @@ function ResultsContainer() {
                   name={"Name: " + i.show.name}
                   type={"Type: " + i.show.type}
                   genres={"Genre(s): " + i.show.genres.join(", ")}
-                  url={"More Info: " + i.show.url}
+                  url={i.show.url}
                   image={i.show.image.medium}
                 />
               </div>
@@ -41,7 +41,7 @@ function ResultsContainer() {
                 name={"Name: " + i.show.name}
                 type={"Type: " + i.show.type}
                 genres={"Genre(s): " + i.show.genres.join(", ")}
-                url={"More Info: " + i.show.url}
+                url={i.show.url}
                 image={NoImage}
               />
             </div>
@@ -59,13 +59,21 @@ function ResultsContainer() {
         if (i.person.country && i.person.birthday && i.person.image) {
           if (i.person.country.name) {
             return (
-              <div className="peopleContainer">
+              <div className="showContainer">
                 <Card
                   name={i.person.name}
-                  type={i.person.country.name? 'Country: ' + i.person.country.name : null}
-                  genres={i.person.birthday? 'Birthday: ' + i.person.birthday: null}
-                  dDay={i.person.deathday? 'Deceased: ' + i.person.deathday : null}
-                  url={"More Info: " + i.person.url}
+                  type={
+                    i.person.country.name
+                      ? "Country: " + i.person.country.name
+                      : null
+                  }
+                  genres={
+                    i.person.birthday ? "Birthday: " + i.person.birthday : null
+                  }
+                  dDay={
+                    i.person.deathday ? "Deceased: " + i.person.deathday : null
+                  }
+                  url={i.person.url}
                   image={i.person.image.medium}
                 />
               </div>
@@ -73,12 +81,16 @@ function ResultsContainer() {
           }
         } else {
           return (
-            <Card
-              name={i.person.name}
-              type={i.person.birthday? 'Birthday: ' + i.person.birthday: null}
-              url={"More Info: " + i.person.url}
-              image={NoImage}
-            />
+            <div className="showContainer">
+              <Card
+                name={i.person.name}
+                type={
+                  i.person.birthday ? "Birthday: " + i.person.birthday : null
+                }
+                url={i.person.url}
+                image={NoImage}
+              />
+            </div>
           );
         }
       });
