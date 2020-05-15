@@ -12,16 +12,59 @@
         flex-direction: row;
 
         .tv-picture{
-            height: 60px;
+            height: 45px;
         }
     
         .title{
             // font-size: 20px;
             position: absolute;
             margin: auto;
-            top: 30%;
+            top: 25%;
             left:0;
             right:50%;
+            bottom:0;
+        }
+
+        .title-two{
+            margin-top: 10px;
+        }
+
+    }
+
+}
+
+.Logo-L{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+
+    @media all and (min-width: 512px) {
+		font-size: 125px;
+	}
+
+    .image-container{
+        height:auto;
+        margin: auto;
+        text-align:center;
+        position:relative;
+        display: flex;
+        flex-direction: row;
+
+        .tv-picture{
+            height: 100px;
+            @media all and (min-width: 512px) {
+                height: 200px;
+            }
+        }
+    
+        .title{
+            // font-size: 20px;
+            position: absolute;
+            margin: auto;
+            top: 12%;
+            left:0;
+            right:66%;
             bottom:0;
         }
 
@@ -30,5 +73,4 @@
         }
 
     }
-
 }

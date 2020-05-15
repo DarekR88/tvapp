@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actions as peopleActions } from '../../Features/PeopleResults/reducer';
+import { actions as peopleActions } from "../../Features/PeopleResults/reducer";
 import { actions as showActions } from "../../Features/SearchResults/reducer";
 import API from "../../utils/API";
-import SearchIcon from '../../photos/searchIcon.png'
-import { actions as formActions } from '../../Features/FormChange/reducer'
+import SearchIcon from "../../photos/searchIcon.png";
+import { actions as formActions } from "../../Features/FormChange/reducer";
+import Logo from "../Logo";
 
 function SearchBar() {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ function SearchBar() {
 
     dispatch(
       formActions.change({
-        formChange: true
+        formChange: true,
       })
     );
     API.search("people?q=" + searchTerm)
@@ -46,7 +47,7 @@ function SearchBar() {
       );
     }
 
-    if(peopleSearchResults){
+    if (peopleSearchResults) {
       dispatch(
         peopleActions.peopleResults({
           peopleSearchResults,
@@ -56,22 +57,23 @@ function SearchBar() {
   }, [showSearchResults, peopleSearchResults]);
 
   return (
-    <div className="searchBar">
-      <form className="searchForm" onSubmit={handleSubmit}>
-        <input
-          onChange={handleChange}
-          type="search"
-          id="search-field"
-          name="search-field"
-          placeholder="Search for a TV show or Actor"
-          value={searchTerm}
-        />
-        <button type="submit" value='search' id="submitButton">
-          <img class="search-icon"
-            src={SearchIcon}
-            alt="Search" />
-        </button>
-      </form>
+    <div className={formChange?"searchBarContainer": 'searchBarContainer-L'}>
+      <Logo />
+      <div className="searchBar">
+        <form className="searchForm" onSubmit={handleSubmit}>
+          <input
+            onChange={handleChange}
+            type="search"
+            id="search-field"
+            name="search-field"
+            placeholder="Search for a TV show or Actor"
+            value={searchTerm}
+          />
+          <button type="submit" value="search" id="submitButton">
+            <img class="search-icon" src={SearchIcon} alt="Search" />
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
