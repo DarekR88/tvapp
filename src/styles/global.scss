@@ -18,3 +18,11 @@ p {
 	margin: 0;
 	padding: 0;
 }
+
+.allContainer {
+	margin: 0 20px;
+
+	@media all and (min-width: 512px) {
+		margin: 0 60px;
+	}
+}

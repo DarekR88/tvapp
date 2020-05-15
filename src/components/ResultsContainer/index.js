@@ -65,7 +65,7 @@ function ResultsContainer() {
                   type={i.person.country.name? 'Country: ' + i.person.country.name : null}
                   genres={i.person.birthday? 'Birthday: ' + i.person.birthday: null}
                   dDay={i.person.deathday? 'Deceased: ' + i.person.deathday : null}
-                  url={i.person.url}
+                  url={"More Info: " + i.person.url}
                   image={i.person.image.medium}
                 />
               </div>
@@ -76,7 +76,7 @@ function ResultsContainer() {
             <Card
               name={i.person.name}
               type={i.person.birthday? 'Birthday: ' + i.person.birthday: null}
-              url={i.person.url}
+              url={"More Info: " + i.person.url}
               image={NoImage}
             />
           );
