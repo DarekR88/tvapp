@@ -20,57 +20,28 @@ function ResultsContainer() {
   );
 
   const resultFilter = (filterCheck) => {
-    // switch (filterCheck) {
-    //   case "shows":
-    //     setActiveShows(true);
-    //     setActiveActors(false);
-    //     break;
-    //   case "actors":
-    //     setActiveActors(true);
-    //     setActiveShows(false);
-    //     break;
-    //   case "AaS":
-    //     setActiveShows(true);
-    //     setActiveActors(true);
-    //     break;
-    //   default:
-    //     setActiveShows(true);
-    //     setActiveActors(true);
-    // }
-    if(filterCheck === 'shows'){
-      setActiveShows(true);
-      setActiveActors(false);
-    } else if (filterCheck === 'actors') {
-      setActiveActors(true);
-      setActiveShows(false);
-    } else if (filterCheck === 'AaS') {
-      setActiveShows(true);
-      setActiveActors(true);
-    } else {
-      setActiveShows(true);
-      setActiveActors(true);
+    switch (filterCheck) {
+      case "shows":
+        setActiveShows(true);
+        setActiveActors(false);
+        break;
+      case "actors":
+        setActiveActors(true);
+        setActiveShows(false);
+        break;
+      case "AaS":
+        setActiveShows(true);
+        setActiveActors(true);
+        break;
+      default:
+        setActiveShows(true);
+        setActiveActors(true);
     }
   };
 
   useEffect(() => {
-      console.log(filterCheck)
-      if(filterCheck === 'shows'){
-        setActiveShows(true);
-        setActiveActors(false);
-      } else if (filterCheck === 'actors') {
-        setActiveActors(true);
-        setActiveShows(false);
-      } else if (filterCheck === 'AaS') {
-        setActiveShows(true);
-        setActiveActors(true);
-      } else {
-        setActiveShows(true);
-        setActiveActors(true);
-      }
-
-    },
-    [filterCheck]
-  );
+    resultFilter(filterCheck);
+  }, [filterCheck]);
 
   const showResultsFunc = (searchResults) => {
     if (searchResults) {
