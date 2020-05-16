@@ -5,7 +5,7 @@ import { reducer as formChangeReducer } from '../Features/FormChange/reducer';
 import { reducer as filterReducer } from '../Features/FilterCheck/reducer';
 
 export default {
-    radioCheck: filterReducer,
+    filterCheck: filterReducer,
     searchTerm: searchTermReducer,
     searchResults: searchResultsReducer,
     peopleResults: peopleResultsReducer,

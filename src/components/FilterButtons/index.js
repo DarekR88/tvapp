@@ -6,7 +6,6 @@ function Filter() {
 
   const dispatch = useDispatch();
   const handleClick = (event) => {
-    console.log(event.target.value)
     dispatch(
       actions.filter({
         filterCheck: event.target.value

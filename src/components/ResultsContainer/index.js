@@ -4,8 +4,8 @@ import Card from "../Card";
 import NoImage from "../../photos/no-image.png";
 
 function ResultsContainer() {
-  const [activeShows, setActiveShows] = useState(false);
-  const [activeActors, setActiveActors] = useState(false);
+  const [activeShows, setActiveShows] = useState(true);
+  const [activeActors, setActiveActors] = useState(true);
   const showSearchResults = useSelector(
     (state) => state.searchResults.searchResults.showSearchResults
   );
@@ -14,6 +14,62 @@ function ResultsContainer() {
   );
   const formChange = useSelector(
     (state) => state.formChange.formChange.formChange
+  );
+  const filterCheck = useSelector(
+    (state) => state.filterCheck.filterCheck.filterCheck
+  );
+
+  const resultFilter = (filterCheck) => {
+    // switch (filterCheck) {
+    //   case "shows":
+    //     setActiveShows(true);
+    //     setActiveActors(false);
+    //     break;
+    //   case "actors":
+    //     setActiveActors(true);
+    //     setActiveShows(false);
+    //     break;
+    //   case "AaS":
+    //     setActiveShows(true);
+    //     setActiveActors(true);
+    //     break;
+    //   default:
+    //     setActiveShows(true);
+    //     setActiveActors(true);
+    // }
+    if(filterCheck === 'shows'){
+      setActiveShows(true);
+      setActiveActors(false);
+    } else if (filterCheck === 'actors') {
+      setActiveActors(true);
+      setActiveShows(false);
+    } else if (filterCheck === 'AaS') {
+      setActiveShows(true);
+      setActiveActors(true);
+    } else {
+      setActiveShows(true);
+      setActiveActors(true);
+    }
+  };
+
+  useEffect(() => {
+      console.log(filterCheck)
+      if(filterCheck === 'shows'){
+        setActiveShows(true);
+        setActiveActors(false);
+      } else if (filterCheck === 'actors') {
+        setActiveActors(true);
+        setActiveShows(false);
+      } else if (filterCheck === 'AaS') {
+        setActiveShows(true);
+        setActiveActors(true);
+      } else {
+        setActiveShows(true);
+        setActiveActors(true);
+      }
+
+    },
+    [filterCheck]
   );
 
   const showResultsFunc = (searchResults) => {
@@ -100,10 +156,22 @@ function ResultsContainer() {
 
   return (
     <div className="ResultsContainer">
-      <p className={formChange ? "active" : "not-active"}>TV Shows</p>
-      {showResultsFunc(showSearchResults)}
-      <p className={formChange ? "active" : "not-active"}>Actors</p>
-      {peopleResultsFunc(peopleSearchResults)}
+      <div
+        className={activeShows && formChange ? "showContainer" : "not-active"}
+      >
+        <p className={formChange && activeShows ? "active" : "not-active"}>
+          TV Shows
+        </p>
+        {showResultsFunc(showSearchResults)}
+      </div>
+      <div
+        className={activeActors && formChange ? "actorContainer" : "not-active"}
+      >
+        <p className={formChange && activeActors ? "active" : "not-active"}>
+          Actors
+        </p>
+        {peopleResultsFunc(peopleSearchResults)}
+      </div>
     </div>
   );
 }
