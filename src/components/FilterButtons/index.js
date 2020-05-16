@@ -1,22 +1,30 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import {actions} from '../../Features/FilterCheck/reducer';
 
 function Filter() {
 
-  const handleClick = () => {
-    
+  const dispatch = useDispatch();
+  const handleClick = (event) => {
+    console.log(event.target.value)
+    dispatch(
+      actions.filter({
+        filterCheck: event.target.value
+      })
+    )
   }
 
   return (
     <div className="filterContainer">
       <p>Search for: </p>
       <div className="filterButtons">
-        <button class="favorite styled" type="button">
+        <button className="favorite styled" type="button" value='shows' onClick={handleClick}>
           Shows
         </button>
-        <button class="favorite styled" type="button">
+        <button className="favorite styled" type="button" value='actors' onClick={handleClick}>
           Actors
         </button>
-        <button class="favorite styled" type="button">
+        <button className="favorite styled" type="button" value='AaS' onClick={handleClick}>
           Actors and Shows
         </button>
       </div>

@@ -70,7 +70,7 @@ function SearchBar() {
             value={searchTerm}
           />
           <button type="submit" value="search" id="submitButton">
-            <img class="search-icon" src={SearchIcon} alt="Search" />
+            <img className="search-icon" src={SearchIcon} alt="Search" />
           </button>
         </form>
       </div>

@@ -11,7 +11,7 @@ function Logo() {
   return (
     <div className={formChange?"Logo":"Logo-L"}>
       <div className="image-container">
-        <img class="tv-picture" src={TvImage} alt="TV" />
+        <img className="tv-picture" src={TvImage} alt="TV" />
         <p className="title">TV</p>
         <p className="title-two">PILOT</p>
       </div>

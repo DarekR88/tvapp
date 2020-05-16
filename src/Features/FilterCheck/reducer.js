@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  radioCheck: ''
+  filterCheck: ''
 };
 
 const slice = createSlice({
-  name: 'radioCheck',
+  name: 'filterCheck',
   initialState,
   reducers: {
-    results: (state, action) => {
-      state.radioCheck = action.payload;
+    filter: (state, action) => {
+      state.filterCheck = action.payload;
     }
   },
 });
