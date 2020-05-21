@@ -11,5 +11,10 @@
     
     .card-info{
         margin-left: 3px;
+
+        .link{
+            color: $primary-light;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
     }
 }

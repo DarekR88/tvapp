@@ -11,7 +11,7 @@ function Card(props) {
         <p>{props.type}</p>
         <p>{props.genres}</p>
         <p>{props.dDay}</p>
-        <a href={props.url}>More Info</a>
+        <a className='link' href={props.url}>More Info</a>
       </div>
     </div>
   );
