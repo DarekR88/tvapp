@@ -1,11 +1,11 @@
-@import './footer.scss';
-@import './nav.scss';
-@import './searchbar.scss';
-@import './variables.scss';
-@import './logo.scss';
-@import './card.scss';
-@import './filter.scss';
-@import './results.scss';
+@import "./footer.scss";
+@import "./nav.scss";
+@import "./searchbar.scss";
+@import "./variables.scss";
+@import "./logo.scss";
+@import "./card.scss";
+@import "./filter.scss";
+@import "./results.scss";
 
 html,
 body,
@@ -16,17 +16,18 @@ h2,
 h1,
 a,
 p {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $primary-dark;
 }
 
 .allContainer {
-	margin: 0 20px;
+  margin: 0 20px;
 
-	@media all and (min-width: 512px) {
-		margin: 0 60px;
-	}
-
+  @media all and (min-width: 512px) {
+    margin: 0 60px;
+  }
 }
-
-

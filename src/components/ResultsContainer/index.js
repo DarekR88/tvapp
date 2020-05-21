@@ -44,15 +44,14 @@ function ResultsContainer() {
   }, [filterCheck]);
 
   const showResultsFunc = (searchResults) => {
-    if (searchResults) {
-      // setActiveShows(true)
+    if (searchResults && searchResults.length) {
       const newArr = searchResults.map((i) => {
         if (i.show.image) {
           if (i.show.image.medium) {
             return (
               <div className="showContainer">
                 <Card
-                  name={"Name: " + i.show.name}
+                  name={"Title: " + i.show.name}
                   type={"Type: " + i.show.type}
                   genres={"Genre(s): " + i.show.genres.join(", ")}
                   url={i.show.url}
@@ -65,7 +64,7 @@ function ResultsContainer() {
           return (
             <div className="showContainer">
               <Card
-                name={"Name: " + i.show.name}
+                name={"Title: " + i.show.name}
                 type={"Type: " + i.show.type}
                 genres={"Genre(s): " + i.show.genres.join(", ")}
                 url={i.show.url}
@@ -80,8 +79,7 @@ function ResultsContainer() {
   };
 
   const peopleResultsFunc = (searchResults) => {
-    if (searchResults) {
-      // setActiveActors(true)
+    if (searchResults && searchResults.length) {
       const peopleArr = searchResults.map((i) => {
         if (i.person.country && i.person.birthday && i.person.image) {
           if (i.person.country.name) {

@@ -1,4 +1,30 @@
 .filterContainer{
+    margin-top: 7px;
     display: flex;
     justify-content: center;
+
+    .directions{
+        font-size: 18px;
+        color: $primary-light;
+        margin-top: 8px;
+        margin-right: 5px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    }
+    .filterButtons{
+        .selectButton{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: $primary-light;
+            font-size: 15px;
+            margin: 0 5px;
+            padding: 10px 10px;
+            // border-radius: 20px;
+            border: 3px solid $primary-light;
+            background-color: $primary-dark;
+        }
+        .clicked{
+            background-color: $primary-light;
+            color: $primary-dark;
+        }
+    }
 }

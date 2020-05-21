@@ -16,7 +16,8 @@
         }
     
         .title{
-            // font-size: 20px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: $primary-light;
             position: absolute;
             margin: auto;
             top: 25%;
@@ -26,7 +27,9 @@
         }
 
         .title-two{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             margin-top: 10px;
+            color: $primary-light
         }
 
     }
@@ -59,17 +62,21 @@
         }
     
         .title{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             // font-size: 20px;
+            color: $primary-light;
             position: absolute;
             margin: auto;
-            top: 12%;
+            top: 8%;
             left:0;
-            right:66%;
+            right:60%;
             bottom:0;
         }
 
         .title-two{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
             margin-top: 18px;
+            color: $primary-light;
         }
 
     }
