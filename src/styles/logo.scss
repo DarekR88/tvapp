@@ -1,84 +1,105 @@
-.Logo{
+.Logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: formChange 1s ease-in-out;
+
+  .image-container {
+    height: auto;
+    margin: auto;
+    text-align: center;
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
 
-    .image-container{
-        height:auto;
-        margin: auto;
-        text-align:center;
-        position:relative;
-        display: flex;
-        flex-direction: row;
-
-        .tv-picture{
-            height: 45px;
-        }
-    
-        .title{
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            color: $primary-light;
-            position: absolute;
-            margin: auto;
-            top: 25%;
-            left:0;
-            right:50%;
-            bottom:0;
-        }
-
-        .title-two{
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            margin-top: 10px;
-            color: $primary-light
-        }
-
+    .tv-picture {
+      height: 45px;
     }
 
-}
-
-.Logo-L{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 65px;
-    margin-top: 20%;
-
-    @media all and (min-width: 512px) {
-		font-size: 125px;
-	}
-
-    .image-container{
-        height:auto;
-        margin: auto;
-        text-align:center;
-        position:relative;
-        display: flex;
-        flex-direction: row;
-
-        .tv-picture{
-            height: 100px;
-            @media all and (min-width: 512px) {
-                height: 200px;
-            }
-        }
-    
-        .title{
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            // font-size: 20px;
-            color: $primary-light;
-            position: absolute;
-            margin: auto;
-            top: 8%;
-            left:0;
-            right:60%;
-            bottom:0;
-        }
-
-        .title-two{
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-            margin-top: 18px;
-            color: $primary-light;
-        }
-
+    .title {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      color: $primary-light;
+      position: absolute;
+      margin: auto;
+      top: 25%;
+      left: 0;
+      right: 50%;
+      bottom: 0;
     }
+
+    .title-two {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      margin-top: 10px;
+      color: $primary-light;
+    }
+  }
 }
+
+@keyframes formChange {
+  0% {
+    opacity: 0;
+    // transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    // transform: translateY(0);
+  }
+}
+
+.Logo-L {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 65px;
+  margin-top: 15%;
+  animation: load 1s ease-in-out;
+
+  @media all and (min-width: 512px) {
+    font-size: 125px;
+  }
+
+  .image-container {
+    height: auto;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+
+    .tv-picture {
+      height: 100px;
+      @media all and (min-width: 512px) {
+        height: 200px;
+      }
+    }
+
+    .title {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      // font-size: 20px;
+      color: $primary-light;
+      position: absolute;
+      margin: auto;
+      top: 8%;
+      left: 0;
+      right: 60%;
+      bottom: 0;
+    }
+
+    .title-two {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      margin-top: 18px;
+      color: $primary-light;
+    }
+  }
+}
+
+@keyframes load {
+    0% {
+      opacity: 0;
+      // transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      // transform: translateY(0);
+    }
+  }

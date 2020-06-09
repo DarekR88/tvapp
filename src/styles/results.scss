@@ -1,25 +1,38 @@
 .ResultsContainer {
   color: $primary-light;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 
-  .active {
-    font-size: 33px;
-    text-align: center;
-    margin: 18px 0px;
-    opacity: 1;
+  .showContainer {
+    border-bottom: 5px $secondary-dark;
+  }
+
+  .not-active-title {
+    opacity: 0;
   }
 
   .not-active {
     display: none;
   }
 
-  .showContainer{
-    border-bottom: 1px solid gray;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
+  .active-title {
+    opacity: 1;
+    font-size: 45px;
+    text-align: center;
+    transition: all 0.25s ease-in;
+  }
 
-    &:last-of-type {
-      border: none;
+  .active {
+    animation: appear 1s ease-in-out;
+  }
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }

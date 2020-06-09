@@ -84,7 +84,7 @@ function ResultsContainer() {
         if (i.person.country && i.person.birthday && i.person.image) {
           if (i.person.country.name) {
             return (
-              <div className="showContainer">
+              <div className="peopleContainer">
                 <Card
                   name={i.person.name}
                   type={
@@ -106,7 +106,7 @@ function ResultsContainer() {
           }
         } else {
           return (
-            <div className="showContainer">
+            <div className="peopleContainer">
               <Card
                 name={i.person.name}
                 type={
@@ -125,20 +125,21 @@ function ResultsContainer() {
 
   return (
     <div className="ResultsContainer">
-      <div
-        className={activeShows && formChange ? "showContainer" : "not-active"}
-      >
-        <p className={formChange && activeShows ? "active" : "not-active"}>
+        <p className={formChange && activeShows ? "active-title" : "not-active-title"}>
           TV Shows
         </p>
+      <div
+        className={activeShows && formChange ? "active" : "not-active"}
+        // className={`${isShown ? 'visible' : null} ${isShown ? 'visible' : null}`}
+      >
         {showResultsFunc(showSearchResults)}
       </div>
-      <div
-        className={activeActors && formChange ? "actorContainer" : "not-active"}
-      >
-        <p className={formChange && activeActors ? "active" : "not-active"}>
+        <p className={formChange && activeActors ? "active-title" : "not-active-title"}>
           Actors
         </p>
+      <div
+        className={activeActors && formChange ? "active" : "not-active"}
+      >
         {peopleResultsFunc(peopleSearchResults)}
       </div>
     </div>

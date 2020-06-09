@@ -1,7 +1,10 @@
 .Card{
     font-size: 16px;
     margin: 5 0;
-    // margin: 0 15;
+
+    .showImage {
+        width: 210px;
+    }
 
     @media all and (min-width: 512px) {
         // margin: 0 60px;
