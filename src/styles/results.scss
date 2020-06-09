@@ -2,12 +2,15 @@
   color: $primary-light;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 
-  .showContainer {
-    border-bottom: 5px $secondary-dark;
+  .infoContainer {
+    @media all and (min-width: 512px) {
+      width: 25%;
+    }
   }
 
   .not-active-title {
     opacity: 0;
+    display: none;
   }
 
   .not-active {
@@ -18,11 +21,26 @@
     opacity: 1;
     font-size: 45px;
     text-align: center;
-    transition: all 0.25s ease-in;
+    // transition: all 0.25s ease-in;
+    animation: titleAnimation 1s ease-in-out;
   }
 
   .active {
     animation: appear 1s ease-in-out;
+
+    @media all and (min-width: 512px) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+  @keyframes titleAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }  
   }
 
   @keyframes appear {

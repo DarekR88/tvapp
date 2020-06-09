@@ -49,7 +49,7 @@ function ResultsContainer() {
         if (i.show.image) {
           if (i.show.image.medium) {
             return (
-              <div className="showContainer">
+              <div className="infoContainer">
                 <Card
                   name={"Title: " + i.show.name}
                   type={"Type: " + i.show.type}
@@ -62,7 +62,7 @@ function ResultsContainer() {
           }
         } else {
           return (
-            <div className="showContainer">
+            <div className="infoContainer">
               <Card
                 name={"Title: " + i.show.name}
                 type={"Type: " + i.show.type}
@@ -84,7 +84,7 @@ function ResultsContainer() {
         if (i.person.country && i.person.birthday && i.person.image) {
           if (i.person.country.name) {
             return (
-              <div className="peopleContainer">
+              <div className="infoContainer">
                 <Card
                   name={i.person.name}
                   type={
@@ -106,7 +106,7 @@ function ResultsContainer() {
           }
         } else {
           return (
-            <div className="peopleContainer">
+            <div className="infoContainer">
               <Card
                 name={i.person.name}
                 type={

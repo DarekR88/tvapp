@@ -1,23 +1,34 @@
-.Card{
-    font-size: 16px;
-    margin: 5 0;
+.Card {
+  font-size: 16px;
+  margin: 5 0;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  text-align: center;
 
-    .showImage {
-        width: 210px;
-    }
+  @media all and (min-width: 512px) {
+    // width: 25%;
+    font-size: 15px;
+  }
 
+  .showImage {
+    width: 210px;
     @media all and (min-width: 512px) {
-        // margin: 0 60px;
-        display: flex;
-        flex-direction: row;
+      width: 125px;
     }
-    
-    .card-info{
-        margin-left: 3px;
+  }
 
-        .link{
-            color: $primary-light;
-            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        }
+  //   @media all and (min-width: 512px) {
+
+  //   }
+
+  .card-info {
+    width: 150px;
+    margin: auto;
+
+    .link {
+      color: $primary-light;
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
     }
+  }
 }
