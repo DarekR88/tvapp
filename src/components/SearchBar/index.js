@@ -5,6 +5,8 @@ import { actions as showActions } from "../../Features/SearchResults/reducer";
 import API from "../../utils/API";
 import SearchIcon from "../../photos/searchIcon.png";
 import { actions as formActions } from "../../Features/FormChange/reducer";
+import { actions as loginActions } from "../../Features/Loggedin/reducer";
+import { actions as modalActions } from "../../Features/Modal/reducer";
 import Logo from "../Logo";
 
 function SearchBar() {
@@ -15,6 +17,16 @@ function SearchBar() {
   const formChange = useSelector(
     (state) => state.formChange.formChange.formChange
   );
+  const loggedIn = useSelector((state) => state.loggedIn.loggedIn);
+
+  const loginClick = (event) => {
+    event.preventDefault();
+    dispatch(
+      modalActions.modalOpen({
+        modalOpen: true,
+      })
+    );
+  };
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -57,7 +69,7 @@ function SearchBar() {
   }, [showSearchResults, peopleSearchResults]);
 
   return (
-    <div className={formChange?"searchBarContainer": 'searchBarContainer-L'}>
+    <div className={formChange ? "searchBarContainer" : "searchBarContainer-L"}>
       <Logo />
       <div className="searchBar">
         <form className="searchForm" onSubmit={handleSubmit}>
@@ -74,6 +86,17 @@ function SearchBar() {
           </button>
         </form>
       </div>
+      <button
+        className={`${formChange ? "button-S" : "button-L"} ${
+          loggedIn ? "hidden" : null
+        }`}
+        type="submit"
+        value="search"
+        id="loginButton"
+        onClick={loginClick}
+      >
+        Login
+      </button>
     </div>
   );
 }

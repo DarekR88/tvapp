@@ -1,0 +1,45 @@
+.LoginModal-open {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  background-color: gainsboro;
+  animation: modalAnimation 1s ease-in-out;
+  padding-left: 25px;
+  padding-top: 20px;
+  border-radius: 5%;
+  border: outset 5px;
+
+  .modal-x {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: 5px;
+      margin-top: 8px;
+      border: none;
+      background-color: gainsboro;
+  }
+
+  .loginButton {
+      margin-top: 10px;
+  }
+
+  @keyframes modalAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.modal-closed {
+    display: none;
+}

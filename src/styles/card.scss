@@ -12,6 +12,7 @@
   }
 
   .showImage {
+    border-radius: 4%;
     width: 210px;
     @media all and (min-width: 512px) {
       width: 125px;
@@ -23,12 +24,20 @@
   //   }
 
   .card-info {
-    width: 150px;
+    width: 125px;
+    text-align: left;
     margin: auto;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+
+    .title {
+      font-weight: bolder;
+      font-size: 15px;
+    }
 
     .link {
       color: $primary-light;
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-weight: bold;
     }
   }
 }

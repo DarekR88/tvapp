@@ -3,8 +3,12 @@ import { reducer as searchResultsReducer } from '../Features/SearchResults/reduc
 import { reducer as peopleResultsReducer } from '../Features/PeopleResults/reducer';
 import { reducer as formChangeReducer } from '../Features/FormChange/reducer';
 import { reducer as filterReducer } from '../Features/FilterCheck/reducer';
+import { reducer as loggedReducer } from '../Features/Loggedin/reducer';
+import { reducer as modalReducer } from '../Features/Modal/reducer';
 
 export default {
+    loggedIn: loggedReducer,
+    modalOpen: modalReducer,
     filterCheck: filterReducer,
     searchTerm: searchTermReducer,
     searchResults: searchResultsReducer,

@@ -7,7 +7,7 @@ function Card(props) {
         <img className="showImage" src={props.image} alt="show/actor image"></img>
       </div>
       <div className="card-info">
-        <p>{props.name}</p>
+        <p className="title">{props.name}</p>
         <p>{props.type}</p>
         <p>{props.genres}</p>
         <p>{props.dDay}</p>

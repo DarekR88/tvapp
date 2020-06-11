@@ -4,6 +4,10 @@
   justify-content: center;
   animation: formChange 1s ease-in-out;
 
+  .hidden {
+    display: none;
+  }
+
   .searchBar {
     text-align: center;
     width: 65%;
@@ -41,6 +45,11 @@
       }
     }
   }
+
+  // .button-s {
+
+  // }
+
 }
 
 @keyframes formChange {
@@ -57,6 +66,10 @@
 .searchBarContainer-L{
 
   animation: load 1s ease-in-out;
+
+  .hidden {
+    display: none;
+  }
 
   .searchBar {
     text-align: center;
@@ -94,6 +107,13 @@
       }
     }
   }
+
+  .button-L {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+
 }
 
 @keyframes load {

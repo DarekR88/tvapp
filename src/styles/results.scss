@@ -19,8 +19,10 @@
 
   .active-title {
     opacity: 1;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 45px;
-    text-align: center;
+    text-align: left;
     // transition: all 0.25s ease-in;
     animation: titleAnimation 1s ease-in-out;
   }

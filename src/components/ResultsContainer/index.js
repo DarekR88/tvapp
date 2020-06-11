@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import Card from "../Card";
 import NoImage from "../../photos/no-image.png";
-
+import Cropped from "../../photos/croppedNoImage.png"
 function ResultsContainer() {
   const [activeShows, setActiveShows] = useState(true);
   const [activeActors, setActiveActors] = useState(true);
+  const [actorResults, setActorResults] = useState(true);
+  const [showResults, setShowResults] = useState(true);
   const showSearchResults = useSelector(
     (state) => state.searchResults.searchResults.showSearchResults
   );
@@ -45,15 +47,16 @@ function ResultsContainer() {
 
   const showResultsFunc = (searchResults) => {
     if (searchResults && searchResults.length) {
+      // setShowResults(true)
       const newArr = searchResults.map((i) => {
         if (i.show.image) {
           if (i.show.image.medium) {
             return (
               <div className="infoContainer">
                 <Card
-                  name={"Title: " + i.show.name}
-                  type={"Type: " + i.show.type}
-                  genres={"Genre(s): " + i.show.genres.join(", ")}
+                  name={i.show.name}
+                  type={i.show.type}
+                  genres={i.show.genres.join(", ")}
                   url={i.show.url}
                   image={i.show.image.medium}
                 />
@@ -64,22 +67,26 @@ function ResultsContainer() {
           return (
             <div className="infoContainer">
               <Card
-                name={"Title: " + i.show.name}
-                type={"Type: " + i.show.type}
-                genres={"Genre(s): " + i.show.genres.join(", ")}
+                name={i.show.name}
+                type={i.show.type}
+                genres={i.show.genres.join(", ")}
                 url={i.show.url}
-                image={NoImage}
+                image={Cropped}
               />
             </div>
           );
         }
       });
       return newArr;
+    } else {
+      console.log("no data")
+      // setShowResults(false)
     }
   };
 
   const peopleResultsFunc = (searchResults) => {
     if (searchResults && searchResults.length) {
+      // setActorResults(true)
       const peopleArr = searchResults.map((i) => {
         if (i.person.country && i.person.birthday && i.person.image) {
           if (i.person.country.name) {
@@ -113,13 +120,16 @@ function ResultsContainer() {
                   i.person.birthday ? "Birthday: " + i.person.birthday : null
                 }
                 url={i.person.url}
-                image={NoImage}
+                image={Cropped}
               />
             </div>
           );
         }
       });
       return peopleArr;
+    } else {
+      console.log("no data")
+      // setActorResults(false)
     }
   };
 
