@@ -4,6 +4,13 @@
   justify-content: center;
   animation: formChange 1s ease-in-out;
 
+  .loginButton {
+    color: white;
+    background-color: darkblue;
+    border: none;
+    text-decoration: white underline;
+  }
+
   .hidden {
     display: none;
   }
@@ -31,6 +38,7 @@
     }
 
     #submitButton {
+      cursor: pointer;
       border-style: solid;
       border-left: none;
       border-color: gray;
@@ -45,10 +53,6 @@
       }
     }
   }
-
-  // .button-s {
-
-  // }
 
 }
 
@@ -93,6 +97,7 @@
     }
 
     #submitButton {
+      cursor: pointer;
       border-style: solid;
       border-left: none;
       border-color: gray;

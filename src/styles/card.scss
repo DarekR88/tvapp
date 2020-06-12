@@ -27,12 +27,25 @@
     width: 125px;
     text-align: left;
     margin: auto;
-    font-family: Verdana, Geneva, sans-serif;
+    font-family: $font-primary;
     font-size: 12px;
 
     .title {
       font-weight: bolder;
       font-size: 15px;
+      margin-bottom: 5px;
+    }
+
+    .genres {
+      margin-bottom: 3px;
+    }
+
+    .type {
+      margin-bottom: 5px;
+    }
+
+    .dDay {
+      margin-bottom: 3px;
     }
 
     .link {

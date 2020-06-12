@@ -1,10 +1,13 @@
 .ResultsContainer {
   color: $primary-light;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: $font-primary;
 
   .infoContainer {
     @media all and (min-width: 512px) {
       width: 25%;
+    }
+    @media all and (max-width: 768px) {
+      width: 30%;
     }
   }
 

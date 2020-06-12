@@ -1,4 +1,5 @@
 .filterContainer{
+    border-bottom: $primary-light solid 5px;
     font-family: $font-primary;
     margin-top: 25px;
     display: flex;
@@ -13,11 +14,13 @@
         margin-right: 5px;
     }
     .filterButtons{
+        
         .selectButton{
+            width: 150px;
+            cursor: pointer;
             color: $primary-light;
             font-size: 15px;
             padding: 10px 10px;
-            border-radius: 5%;
             border: 3px solid $primary-light;
             background-color: $primary-dark;
         }
