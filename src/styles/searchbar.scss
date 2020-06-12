@@ -5,10 +5,10 @@
   animation: formChange 1s ease-in-out;
 
   .loginButton {
-    color: white;
-    background-color: darkblue;
+    color: $primary-light;
+    background-color: $primary-dark;
     border: none;
-    text-decoration: white underline;
+    text-decoration: $primary-light underline;
   }
 
   .hidden {
