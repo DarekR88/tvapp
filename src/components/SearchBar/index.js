@@ -87,7 +87,7 @@ function SearchBar() {
         </form>
       </div>
       <button
-        className={`${formChange ? "button-S" : "button-L"} ${
+        className={`${formChange ? "loginButton button-S" : "loginButton button-L"} ${
           loggedIn ? "hidden" : null
         }`}
         type="submit"

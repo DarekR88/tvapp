@@ -1,8 +1,13 @@
 .Logo {
+  font-family: $font-primary;
   display: flex;
   justify-content: center;
   align-items: center;
   animation: formChange 1s ease-in-out;
+
+  @media all and (max-width: 512px) {
+    display: none;
+  }
 
   .image-container {
     height: auto;
@@ -17,7 +22,6 @@
     }
 
     .title {
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
       color: $primary-light;
       position: absolute;
       margin: auto;
@@ -48,11 +52,13 @@
 }
 
 .Logo-L {
+  font-family: $font-primary;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 65px;
   margin-top: 15%;
+  margin-bottom: 70px;
   animation: load 1s ease-in-out;
 
   @media all and (min-width: 512px) {
@@ -75,19 +81,18 @@
     }
 
     .title {
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-family: "Trebuchet MS", Helvetica, sans-serif;
       // font-size: 20px;
       color: $primary-light;
       position: absolute;
       margin: auto;
       top: 8%;
       left: 0;
-      right: 60%;
+      right: 69%;
       bottom: 0;
     }
 
     .title-two {
-      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
       margin-top: 18px;
       color: $primary-light;
       margin-left: 16px;
@@ -96,12 +101,12 @@
 }
 
 @keyframes load {
-    0% {
-      opacity: 0;
-      // transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      // transform: translateY(0);
-    }
+  0% {
+    opacity: 0;
+    // transform: translateY(20px);
   }
+  100% {
+    opacity: 1;
+    // transform: translateY(0);
+  }
+}
