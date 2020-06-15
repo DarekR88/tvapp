@@ -7,6 +7,7 @@ import SearchIcon from "../../photos/searchIcon.png";
 import { actions as formActions } from "../../Features/FormChange/reducer";
 import { actions as loginActions } from "../../Features/Loggedin/reducer";
 import { actions as modalActions } from "../../Features/Modal/reducer";
+import { actions as signupActions } from "../../Features/Signup/reducer";
 import Logo from "../Logo";
 
 function SearchBar() {
@@ -27,6 +28,15 @@ function SearchBar() {
       })
     );
   };
+
+  const signupClick = (event) => {
+    event.preventDefault();
+    dispatch(
+      signupActions.signupOpen({
+        signupOpen: true,
+      })
+    )
+  }
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -87,11 +97,18 @@ function SearchBar() {
         </form>
       </div>
       <button
-        className={`${formChange ? "loginButton button-S" : "loginButton button-L"} ${
-          loggedIn ? "hidden" : null
-        }`}
+        className={`${
+          formChange ? "signupButton signup-S" : "sightnupButton signup-L"
+        } ${loggedIn ? "hidden" : null}`}
+        onClick={signupClick}
+      >
+        Sign up
+      </button>
+      <button
+        className={`${
+          formChange ? "loginButton button-S" : "loginButton button-L"
+        } ${loggedIn ? "hidden" : null}`}
         type="submit"
-        value="search"
         id="loginButton"
         onClick={loginClick}
       >

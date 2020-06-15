@@ -7,6 +7,7 @@
 @import "./filter.scss";
 @import "./results.scss";
 @import "./loginModal.scss";
+@import "./signup.scss";
 
 html,
 body,
@@ -23,11 +24,13 @@ p {
 
 body {
   background-color: $primary-dark;
+  background-image: linear-gradient(#0e2439, #1f364d);
   margin-top: 10px;
 }
 
 .allContainer {
   margin: 0 20px;
+  
 
   @media all and (min-width: 512px) {
     margin: 0 60px;

@@ -3,12 +3,24 @@
   flex-direction: row;
   justify-content: center;
   animation: formChange 1s ease-in-out;
+  background-color: #00041E;
+  height: 50px;
+  width:100%;
+
+ 
 
   .loginButton {
     color: $primary-light;
-    background-color: $primary-dark;
+    background-color: transparent;
     border: none;
     text-decoration: $primary-light underline;
+  }
+
+  .signup-S {
+    text-decoration: underline;
+    background: transparent;
+    color: $primary-light;
+    border: none;
   }
 
   .hidden {
@@ -71,6 +83,17 @@
 
   animation: load 1s ease-in-out;
 
+  .signup-L {
+    font-size: 20px;
+    text-decoration: underline;
+    position: absolute;
+    top: 0px;
+    right: 75px;
+    background: transparent;
+    color: $primary-light;
+    border: none;
+  }
+
   .hidden {
     display: none;
   }
@@ -114,9 +137,14 @@
   }
 
   .button-L {
+    font-size: 20px;
+    text-decoration: underline;
     position: absolute;
     top: 0px;
     right: 0px;
+    background: transparent;
+    color: $primary-light;
+    border: none;
   }
 
 }

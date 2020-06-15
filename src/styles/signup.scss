@@ -1,0 +1,21 @@
+.SignupModal-closed{
+    display: none;
+}
+
+.SignupModal-open {
+    color: $secondary-dark;
+    font-family: $font-primary;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+    height: 200px;
+    background-color: $primary-dark;
+    padding-left: 25px;
+    padding-top: 20px;
+    border-radius: 5%;
+    border: outset 5px $primary-dark;
+}
