@@ -1,0 +1,15 @@
+.ModalBackdrop{
+    background-color: black;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom:0;
+    width: auto;
+    opacity: .5;
+    z-index: 5;
+}
+
+.ModalBackdropClosed {
+    display: none;
+}

@@ -8,6 +8,7 @@
 @import "./results.scss";
 @import "./loginModal.scss";
 @import "./signup.scss";
+@import "./modalBackdrop.scss";
 
 html,
 body,
@@ -22,10 +23,10 @@ p {
   padding: 0;
 }
 
+
 body {
   background-color: $primary-dark;
   background-image: linear-gradient(#0e2439, #1f364d);
-  margin-top: 10px;
 }
 
 .allContainer {

@@ -6,6 +6,7 @@ import ResultsContainer from "./components/ResultsContainer";
 import FilterButtons from './components/FilterButtons';
 import LoginModal from './components/LoginModal';
 import SignupModal from './components/SignupModal';
+import ModalBackdrop from './components/ModalBackdrop';
 
 const store = createStore();
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
+          <ModalBackdrop />
           <SearchBar />
         <div className="allContainer">
           <FilterButtons />

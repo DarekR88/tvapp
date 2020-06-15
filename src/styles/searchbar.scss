@@ -4,16 +4,15 @@
   justify-content: center;
   animation: formChange 1s ease-in-out;
   background-color: #00041E;
-  height: 50px;
+  height: 70px;
   width:100%;
-
- 
 
   .loginButton {
     color: $primary-light;
     background-color: transparent;
     border: none;
     text-decoration: $primary-light underline;
+    outline: none;
   }
 
   .signup-S {
@@ -36,6 +35,8 @@
       justify-content: center;
       align-items: center;
       position: relative;
+      padding-top: 13px;
+      outline: none;
     }
 
     #search-field {
@@ -47,6 +48,7 @@
       border-bottom-left-radius: 20px;
       height: 40px;
       padding-left: 20px;
+      outline: none;
     }
 
     #submitButton {
@@ -59,6 +61,7 @@
       border-bottom-right-radius: 20px;
       height: 40px;
       padding-right: 15px;
+      outline: none;
 
       .search-icon {
         height: 20px;
@@ -117,6 +120,7 @@
       border-bottom-left-radius: 20px;
       height: 40px;
       padding-left: 20px;
+      outline: none;
     }
 
     #submitButton {
@@ -129,6 +133,7 @@
       border-bottom-right-radius: 20px;
       height: 40px;
       padding-right: 15px;
+      outline: none;
 
       .search-icon {
         height: 20px;
@@ -145,6 +150,7 @@
     background: transparent;
     color: $primary-light;
     border: none;
+    outline: none;
   }
 
 }
